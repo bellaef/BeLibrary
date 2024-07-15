@@ -5,7 +5,7 @@
     <div class="row mb-3">
         <div class="col-12">
             @if(Auth::check())
-                <h2 class="text-center" class="col-12" style="color: rgb(81, 143, 201)">
+                <h2 class="text-center" class="col-12" style="color: #543310">
                 Welcome to BeLibrary, {{ Auth::user()->username }}!
             </h2>
             @else
