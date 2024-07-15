@@ -23,7 +23,7 @@ class DashboardController extends Controller
         $jumlahAdmin = User::where('role', 'admin')->count();
         $jumlahPengunjung = User::where('role', 'pengunjung')->count();
         $jumlahTotalBuku = Buku::count();
-        $jumlahBukuTerpinjam = Peminjaman_buku::where('status', 1)->count(); // Menghitung jumlah baris dengan status 1
+        $jumlahBukuTerpinjam = Buku::where('status', 1)->count(); // Menghitung jumlah baris dengan status 1
 
         return view('admin.dashboard.index', compact(
             'jumlahAdmin',

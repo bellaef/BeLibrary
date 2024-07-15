@@ -6,7 +6,7 @@
     <h2 class="text-center" style="font-weight: bold; color:#543310">Tambah Buku</h2>
     <main class="container">
        <!-- START FORM -->
-       <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
+       <form action="{{ route('bukus.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="my-3 p-4 bg-body rounded shadow-sm">
             <div class="mb-3 row">
@@ -25,6 +25,12 @@
                 <label for="Penerbit" class="col-sm-2 col-form-label">Penerbit</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" name="penerbit" id="penerbit">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="isbn" class="col-sm-2 col-form-label">ISBN</label>
+                <div class="col-sm-10">
+                    <input type="varchar" class="form-control" name="isbn" id="isbn">
                 </div>
             </div>
             <div class="mb-3 row">
@@ -52,7 +58,7 @@
             </div>
             <div class="mb-3 row">
                 <label for="submit" class="col-sm-2 col-form-label"></label>
-                <div class="col-sm-10"><button type="submit" class="btn btn-primary" name="submit" style="color:#543310">Tambahkan</button></div>
+                <div class="col-sm-10"><button type="submit" class="btn btn-primary" name="submit" style="background-color:#74512D">Tambahkan</button></div>
             </div>
           </form>
         </div>

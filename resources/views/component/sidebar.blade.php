@@ -33,9 +33,9 @@
                     <a class="sidebar-link {{ Route::is('buku.page') || Route::is('bukus.*') ? 'active' : '' }}"
                        href="{{ route('buku.page') }}"
                        aria-expanded="false"
-                       style="{{ Route::is('buku.page') ? 'background-color: #AF8F6F; color: #ffffff;' : '' }}"
-                       onmouseover="this.style.backgroundColor='#F8F4E1'; this.style.color='#555';"
-                       onmouseout="this.style.backgroundColor='{{ Route::is('buku.page') ? '#AF8F6F' : '' }}'; this.style.color='{{ Route::is('buku.page') ? '#ffffff' : '' }}';">
+                       style="{{ Route::is('buku.page') || Route::is('bukus.*') ? 'background-color: #AF8F6F; color: #ffffff;' : '' }}"
+                       onmouseover="if (!this.classList.contains('active')) { this.style.backgroundColor='#F8F4E1'; this.style.color='#555'; }"
+                       onmouseout="if (!this.classList.contains('active')) { this.style.backgroundColor='{{ Route::is('buku.page') ? '#AF8F6F' : '' }}'; this.style.color='{{ Route::is('buku.page') ? '#ffffff' : '' }}'; }">
                         <span>
                             <i class="ti ti-article"></i>
                         </span>

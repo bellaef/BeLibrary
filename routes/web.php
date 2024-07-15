@@ -45,7 +45,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::get('/profile', [ProfilController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfilController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfilController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/Cari_Produk', [BukuController::class, 'search'])->name('products.search');
+    Route::get('/Cari_Buku', [BukuController::class, 'search'])->name('bukus.search');
+    // Route::get('/Tambah_Buku',[BukuController::class,'showCreate'])->name('addproduct.page');
 });
 
 // Route::middleware(['auth', 'isAdmin'])->group(function(){

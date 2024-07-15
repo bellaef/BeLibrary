@@ -6,7 +6,7 @@ use App\Models\Buku;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 
-class ProductController extends Controller
+class BukuController extends Controller
 {
     public function index(): View
     {
@@ -73,19 +73,19 @@ class ProductController extends Controller
 
     public function destroy(Buku $buku): RedirectResponse
     {
-        $product->delete();
-        return redirect()->route('products.index')->with('success', 'Produk berhasil dihapus');
+        $buku->delete();
+        return redirect()->route('bukus.index')->with('success', 'Data buku berhasil dihapus');
     }
 
     public function search(Request $request): View
 {
     $searchKeyword = $request->input('katakunci');
 
-    $products = Product::where('nama_produk', 'LIKE', "%$searchKeyword%")
-                        ->orWhere('deskripsi', 'LIKE', "%$searchKeyword%")
-                        ->orWhere('kategori', 'LIKE', "%$searchKeyword%")
+    $products = Buku::where('judul', 'LIKE', "%$searchKeyword%")
+                        ->orWhere('isbn', 'LIKE', "%$searchKeyword%")
+                        ->orWhere('penulis', 'LIKE', "%$searchKeyword%")
                         ->get();
 
-    return view('admin.produk.index', compact('products'));
+    return view('admin.buku.index', compact('bukus'));
 }
 }

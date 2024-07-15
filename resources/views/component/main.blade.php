@@ -12,6 +12,11 @@
     <div class="body-wrapper">
         @include('component.header')
         @yield('content')
+        <footer class="footer">
+            <div class="container text-center">
+              <p>&copy; {{ date('Y') }} Bella. All rights reserved.</p>
+            </div>
+          </footer>
     </div>
   </div>
   @include('component.js')

@@ -14,15 +14,15 @@
 
             <!-- FORM PENCARIAN -->
             <div class="pb-3">
-                <form class="d-flex" action="{{ route('products.search') }}" method="get">
+                <form class="d-flex" action="{{ route('bukus.search') }}" method="get">
                     <input class="form-control me-1" type="search" name="katakunci" value="{{ Request::get('katakunci') }}" placeholder="Cari produk" aria-label="Search">
-                    <button class="btn btn-secondary" type="submit">Cari Buku</button>
+                    <button class="btn btn-secondary" type="submit" style="background-color: #74512D">Cari Buku</button>
                 </form>
             </div>
 
             <!-- TOMBOL TAMBAH DATA -->
             <div class="pb-3">
-                <a href='{{ route('products.create') }}' class="btn btn-primary"> + Tambah Data Buku </a>
+                <a href='{{ route('bukus.create') }}' class="btn btn-primary" style="background-color: #74512D"> + Tambah Data Buku </a>
             </div>
 
             <table class="table table-striped">
@@ -45,15 +45,15 @@
                     <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $buku->judul }}</td>
-                        <td>{{ $buku->ISBN }}</td>
+                        <td>{{ $buku->isbn }}</td>
                         <td>{{ $buku->penulis }}</td>
                         <td>{{ $buku->penerbit }}</td>
                         <td>{{ $buku->tahun_terbit }}</td>
                         <td>{{ $buku->jumlah_salinan }}</td>
-                        <td>{{ $buku->Status }}</td>
+                        <td>{{ $buku->status }}</td>
                         <td>
-                            <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline-block;">
+                            <a href="{{ route('bukus.edit', $buku->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                            <form action="{{ route('bukus.destroy', $buku->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">Del</button>
